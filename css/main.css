@@ -6,8 +6,13 @@ body {
 
 /* Header */
 header {
-    color: red;
-    margin: 20px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ff0000;
+  box-shadow: 0 2px 4px rgba(0,0,0,1);
 }
 
 /* Headings */
