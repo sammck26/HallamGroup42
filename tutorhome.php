@@ -1,53 +1,65 @@
-<?php include_once("ModuleLeaderNavBar.php"); ?>
+<?php include_once("TutorNavBar.php"); ?>
 <?php include_once("viewstudentSQL.php");
 $user = getStudent();
 ?>
 <div class="content">
-  <h1>Students</h1>
-  <a href="http://localhost/Hallam%20Student%20Managment%20Sytem%20GitHub/HallamGroup42/viewtutorsandstudenthelpers.php"><button class="tutors-and-student-helpers">Tutors and StudentHelpers</button></a>
-  
-  <button class="add-milestones">Add Milestones</button>
+  <h1>Stage 1</h1>
+ 
   <table>
     <thead>
       <tr>
         <th>First Name</th>
         <th>Last Name</th>
-        
+        <th>ID</th>
         <th>Information</th>
       </tr>
     </thead>
     <tbody>
-			<?php
+    <?php
 				for ($i=0; $i<count($user); $i++):
 			?>
 			<tr>
-			  
-				<td><?php echo $user[$i]['FirstName']?></td>
-				<td><?php echo $user[$i]['LastName']?></td> 
+				<td><?php echo $user[$i]['username']?></td>
+				<td><?php echo $user[$i]['fname']?></td>
+				<td><?php echo $user[$i]['lname']?></td> 
                         
 				<td>
           <button class="tutors-and-student-helpers">
-          <a class="info-link" href="infopage.php?StudentID=<?php echo $user[$i]['StudentID']; ?>&FirstName=<?php echo $user[$i]['FirstName']; ?>">info</a>
-
+              <a class="info-link" href="infopage.php?username=<?php echo $user[$i]['username']; ?>">info</a>
          </button>
         </td>
 			</tr>
 			<?php endfor;?>
-		</tbody>
-  </table>
+    </tbody>
+  </table><button class="attendance">Attendance</button>
   <div class="scroll-bar">
     <div class="scroll-bar-inner"></div>
-  </div>
-  <button class="attendance">Attendance</button>
-</div>
+    
 
 <style>
-  
-    
-    a.info-link {
+  .attendance {
+    background-color: white;
+    color: #D90B3E;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+   a.info-link {
         color: white;
     }
-
+  .tutors-and-student-helpers {
+    background-color: #D90B3E;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
   body {
     background-color: #f2f2f2;
   }
@@ -64,16 +76,6 @@ $user = getStudent();
     background-color: #D90B3E;
     padding: 10px;
     border-radius: 5px;
-  }
-  .tutors-and-student-helpers {
-    background-color: #D90B3E;
-    color: white;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
   }
   .add-milestones,
   .info,
