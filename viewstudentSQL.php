@@ -2,7 +2,7 @@
 <?php
 
 function getStudent (){
-    $db = new SQLITE3('C:\\xampp\\Storageforhallam\\Database.db');
+    $db = new SQLITE3('database/database.db');
     $sql = "SELECT * FROM students";
     $stmt = $db->prepare($sql);
     $result = $stmt->execute();
