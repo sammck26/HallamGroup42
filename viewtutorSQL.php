@@ -2,7 +2,7 @@
 <?php
 
 function gettutor (){
-    $db = new SQLITE3('C:\\xampp\\Storageforhallam\\Database.db');
+    $db = new SQLITE3('database/database.db');
     $sql = "SELECT * FROM Databaseold.tutor";
     $stmt = $db->prepare($sql);
     $result = $stmt->execute();

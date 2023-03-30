@@ -6,7 +6,7 @@ function verifyUsers () {
     //    return null;
     //}
 
-    $db = new SQLite3('C:\\xampp\\Storageforhallam\\Database.db');
+    $db = new SQLite3('database/database.db');
     $username = $_POST['username'];
     $password =  $_POST['password'];
     $sql = "SELECT * FROM logininfo WHERE username='$username' AND password='$password'";

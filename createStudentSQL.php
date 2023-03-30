@@ -15,7 +15,7 @@ function createStudent(){
     $random = mt_rand(100, 999);
     //$password = generatePassword($_POST['fname'], $_POST['lname']);
     $username = substr($fname, 0, 3) . substr($lname, 0, 1) . $random;
-    $db = new SQLite3('C:\\xampp\\Storageforhallam\\Database.db');
+    $db = new SQLite3('database/database.db');
 
     // Insert into 'info' table
     $sql = 'INSERT INTO student(username, fname,lname,email,course) VALUES (:username,:fname,:lname,:email,:course)';

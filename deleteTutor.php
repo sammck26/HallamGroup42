@@ -1,6 +1,6 @@
 <?php require("ModuleLeaderNavBar.php");
 
-$db = new SQLite3('C:\\xampp\\Storageforhallam\\Database.db');
+$db = new SQLite3('database/database.db');
 
 $username = $_GET['username'];
 $sql = "SELECT * FROM tutor WHERE username='$username'";
@@ -16,7 +16,7 @@ while($row=$result->fetchArray(SQLITE3_NUM)){
 }
 
 if (isset($_POST['delete'])){
-    $db = new SQLite3('C:\\xampp\\Storageforhallam\\Database.db');
+    $db = new SQLite3('databse/database.db');
 
     $stmt = "DELETE FROM tutor WHERE username = '$username'";
     $sql = $db->prepare($stmt);
